@@ -1,0 +1,23 @@
+Run on Beagle Board:
+
+case 1:
+    root@omap:/home/ubuntu/tom# ./kmem_mem /boot/System.map-3.0.4-x3
+    found jiffies at (0xc0870080) c0870080
+    /dev/kmem read buf = 319317
+    jiffies=319317 (read from virtual memory)
+
+    /dev/mem: the offset is 870080
+    the page size = 4096
+    mmap: Invalid argument
+
+
+
+case 2:
+    root@omap:/home/ubuntu/tom# ./kmem_mem /boot/System.map-3.0.4-x3 
+    found jiffies at (0xc0870080) c0870080
+    /dev/kmem read buf = 333631
+    jiffies=333631 (read from virtual memory)
+
+    /dev/mem: the offset is 870080
+    /dev/mem read failed: Bad address
+    jiffies=0 (read from physical memory)
